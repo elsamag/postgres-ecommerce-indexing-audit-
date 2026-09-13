@@ -64,4 +64,4 @@ PostgreSQL's cost-based optimizer (CBO) evaluates query plans based on estimated
 
 **Composite B-Tree Index** ((fulfillment_status, order_timestamp ASC)): Provides full coverage across all status transitions (PENDING, AWAITING_DISPATCH, SHIPPED, DELIVERED).
 
-**Targeted Partial Index** (WHERE fulfillment_status = 'AWAITING_DISPATCH'): Reduces index footprint from **84 MB down to 420 KB**, ensuring the entire index remains 100% pinned in PostgreSQL shared_buffers RAM indefinitely with zero cache eviction.
+**Targeted Partial Index** (WHERE fulfillment_status = 'AWAITING_DISPATCH'): Reduces index footprint from **84 MB down to 420 KB**, ensuring the entire index remains 100% pinned in PostgreSQL `shared_buffers` RAM indefinitely with zero cache eviction.
