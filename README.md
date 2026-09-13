@@ -212,4 +212,25 @@ psql -h localhost -U postgres -d ecommerce_db -f src/03_composite_partial_indexe
 ```bash
 psql -h localhost -U postgres -d ecommerce_db -f src/04_buffer_cache_inspector.sql    
 ```
-                       
+
+> ### 💼 Enterprise Database Consulting & Infrastructure Optimization
+> **Elsamag IT Solutions** provides specialized PostgreSQL database optimization, high-throughput query refactoring, and cloud infrastructure cost auditing for high-growth e-commerce, logistics, and fintech platforms.
+>
+> **Lead Technical Consultant:** **Samuel Chinwendu Agu**  
+> **Direct Profile & Engagement:** [github.com/Elsamag](https://github.com/Elsamag)
+
+### Specialized Client Engagement Packages
+
+| Service Tier | Scope & Core Deliverables | Turnaround | Investment |
+| :--- | :--- | :--- | :--- |
+| **Tier 1: 48-Hour PostgreSQL Health & Buffer Diagnostic** | • Complete database slow-query audit via `pg_stat_statements`.<br>• Buffer cache hit-ratio analysis (`pg_buffercache`) & unindexed scan detection.<br>• Empirical latency benchmark report & execution plan analysis.<br>• Actionable index refactoring roadmap for your internal engineering team. | **48 Hours** | **$500 Flat** |
+| **Tier 2: Full Production Index Engineering & Cloud Cost Cut** | • Zero-downtime index migrations (`CREATE INDEX CONCURRENTLY`).<br>• Partial, composite, and covering index refactoring for high-volume dispatch queues.<br>• Memory tuning (`shared_buffers`, `work_mem`, `maintenance_work_mem`).<br>• Automated CI/CD database linting workflow (`.github/workflows/ci.yml`).<br>• Guaranteed 75%+ latency reduction + 30 days post-launch query monitoring. | **7–10 Days** | **$1,500 Flat** |
+
+---
+
+### ⭐ Support & Feedback
+
+If this project or repository helped you optimize your infrastructure or solve a technical bottleneck, please give it a **Star (⭐)** on GitHub!
+
+Follow **[Samuel Chinwendu Agu (@Elsamag)](https://github.com/Elsamag)** for upcoming open-source enterprise analytics, cybersecurity, and data engineering tools.
+            
