@@ -1,6 +1,5 @@
 # PostgreSQL E-Commerce Indexing Audit // Latency & Buffer Diagnostic
 
-```text
 [ASSET ID]: ELSA-SQL-001
 [STACK]: PostgreSQL 15 / 16
 [DOMAIN]: E-Commerce Fulfillment & Order Sync
