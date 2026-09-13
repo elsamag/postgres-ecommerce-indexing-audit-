@@ -11,7 +11,7 @@
 
 ---
 
-## 1. Executive Summary & Client Problem Narrative
+##  Executive Summary & Client Problem Narrative
 
 ### The Operational Bottleneck (The Business Bleed)
 In high-velocity omnichannel e-commerce fulfillment, warehouse management systems (WMS) and automated dispatch queues continuously poll the database for pending orders requiring packaging and shipment dispatch. At **OmniRoute Fulfillment Hubs**, the primary fulfillment pipeline was executing high-frequency polling queries filtering on `fulfillment_status = 'AWAITING_DISPATCH'` sorted by `order_timestamp ASC` to honor strict 2-hour Same-Day Delivery SLAs.
@@ -34,7 +34,7 @@ As the `orders` ledger grew to **3,850,000 active rows (1.44 GB table heap)**, t
 
 ---
 
-## 2. Technical Solution Architecture & Core Logic Blueprint
+##  Technical Solution Architecture & Core Logic Blueprint
 
 ### Foundational Engineering Mechanics
 PostgreSQL's cost-based optimizer (CBO) evaluates query plans based on estimated disk block fetches and CPU operation costs. The legacy query suffered from two architectural anti-patterns:
@@ -114,7 +114,7 @@ WHERE fulfillment_status = 'AWAITING_DISPATCH'
 ORDER BY order_timestamp ASC
 LIMIT 100;
 ```
-## 4. Empirical Performance Metrics & Live Terminal Preview
+##  Empirical Performance Metrics & Live Terminal Preview
 
 ### Benchmark Execution Summary (Dataset Scale: 3,850,000 Records)
 * **Database Host:** AWS Aurora PostgreSQL 15.4 (`db.r6g.large`, 16 GB RAM, 2 vCPUs)
@@ -158,7 +158,7 @@ BENCHMARK VERDICT: 1,842.31 ms -> 1.41 ms (1,306x Speedup | Zero Disk Reads)
 ================================================================================
 ```
 
-## 5. Repository Structure & Directory Layout
+##  Repository Structure & Directory Layout
 
 ```text
 postgres-ecommerce-indexing-audit/
@@ -180,7 +180,7 @@ postgres-ecommerce-indexing-audit/
 └── README.md
 ```
 
-## 6. Step-by-Step Deployment & Execution Guide
+##  Step-by-Step Deployment & Execution Guide
 
 ### Prerequisites
 * PostgreSQL 14, 15, or 16 installed locally or provisioned via AWS Aurora / RDS.
@@ -189,7 +189,6 @@ postgres-ecommerce-indexing-audit/
 
 ### Quick-Start CLI Execution
 
-```bash
 #### Step 1: Clone the enterprise audit repository
 ```bash
 git clone https://github.com/Elsamag/postgres-ecommerce-indexing-audit.git
@@ -209,7 +208,8 @@ psql -h localhost -U postgres -d ecommerce_db -f src/02_unindexed_baseline_audit
 psql -h localhost -U postgres -d ecommerce_db -f src/03_composite_partial_indexes.sql
 ```
 
-# Step 5: Verify post-optimization buffer memory caching and sub-2ms execution
+#### Step 5: Verify post-optimization buffer memory caching and sub-2ms execution
+```bash
 psql -h localhost -U postgres -d ecommerce_db -f src/04_buffer_cache_inspector.sql    
-
+```
                        
